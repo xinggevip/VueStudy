@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue入门</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+        <input type="text" v-model="scor">
+        <p v-if="scor > 100">超出数据范围</p>
+        <p v-else-if="scor == ''">内容为空</p>
+        <p v-else-if="scor >= 90">优秀</p>
+        <p v-else-if="scor >= 60">恭喜你及格了！</p>
+        <p v-else-if="scor < 60 && scor >= 0">不及格</p>
+        <p v-else-if="scor < 0">超出数据范围</p>
+        <p v-else="scor">数据非法</p>
+        <h1>v-show,v-on:click</h1>
+        <button v-on:click="loding = !loding">display开关控制</button>
+        <p v-show="loding">按钮控制的内容</p>
+        <button v-on:click="fn()">执行函数</button>
+        <p>
+            v-if和v-show的区别：v-if是将整个标签添加或移除掉，v-show是设置display的属性值
+        </p>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

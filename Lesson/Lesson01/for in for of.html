@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // for in 只遍历索引
+        let arr = [1, 2, 3, 4, 5, 6];
+        for (let i in arr) {
+            console.log(i);
+        };
+        let obj = {
+            a: "1",
+            b: "2",
+            c: "3"
+        };
+        for (let item in obj) {
+            console.log(item);
+        };
+        let str = "Hello gaoxing";
+        for (let i in str) {
+            console.log(i);
+        }
+        console.log("-------------------------------------");
+
+
+        // for of Array遍历值，String遍历值,json遍历下标，值，和下标and值
+        let arr2 = [1, 2, 3, 4, 5, 6];
+        for (let i of arr2) {
+            console.log(i);
+        };
+        let obj2 = {
+            a: "1",
+            b: "2",
+            c: "3"
+        };
+        for (let i of Object.keys(obj2)) {
+            console.log(i);
+        };
+        let str2 = "Hello Gaoxing";
+        for(let i of str2){
+            console.log(i);
+        }
+    </script>
+</body>
+
+</html>
