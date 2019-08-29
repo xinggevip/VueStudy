@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue入门</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app" >
+        <h1>属性绑定</h1>
+        <hr>
+        <p>姓名：<input type="text" v-bind:value="name"></p>
+        <p><a v-bind:href="url">高公子</a></p>
+        <p v-html="webTag"></p>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
