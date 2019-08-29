@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue入门</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <h1>Todo</h1>
+        <button v-on:click="togo()">全部显示/隐藏</button>
+        <input type="text" placeholder="输入待办事项+enter" @keyup.enter="add" v-model="thing">
+        <ul>
+            <li v-for="item in something" v-show="item.see">{{item['do']}}---- <a href="javascript:;"
+                    v-on:click="hid(item)">删除</a> </li>
+        </ul>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
