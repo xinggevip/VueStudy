@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue入门</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>计算属性</h1>
+        <hr>
+        <button v-on:click="a++">a++</button>
+        <button v-on:click="b++">b++</button>
+        <p>a = {{a}}</p>
+        <p>b = {{b}}</p>
+        <p>c = {{c}}</p>
+        <p>a + c = {{addToa}}</p>
+        <p>b + c = {{addTob}}</p>
+        
+        
+
+    </div>
+    <script>
+        let app = new Vue({
+            el: "#app",
+
+            data: {
+                a:0,
+                b:0,
+                c:10
+            },
+            methods: {
+                // addToa: function (){
+                //     console.log("addToa");
+                //     return this.a + this.c;
+                // },
+                // addTob: function (){
+                //     console.log("addTob");
+                //     return this.b + this.c;
+                // },
+            },
+            computed:{
+                addToa: function (){
+                    console.log("addToa");
+                    return this.a + this.c;
+                },
+                addTob: function (){
+                    console.log("addTob");
+                    return this.b + this.c;
+                },
+            }
+
+        })
+    </script>
+</body>
+
+</html>
