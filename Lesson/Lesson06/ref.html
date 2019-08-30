@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue入门</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>双向数据绑定 / input / select / textarea /</h1>
+        <hr>
+        <h2>ref</h2>
+        <hr>
+        <form action="javascript:;">
+            <label for="oneName">姓名</label><input type="text" id="oneName" ref="name" v-on:keyup="inpName">{{name}}<br>
+            <label for="oneAge">年龄</label><input type="text" id="oneAge" ref="age" v-on:keyup="inpAge">{{age}}<br>
+        </form>
+        
+
+    </div>
+    <script>
+        let app = new Vue({
+            el: "#app",
+
+            data: {
+                name:"TOm",
+                age:""
+            },
+            methods: {
+                inpName: function (){
+                    // console.log(this.$refs.name.value);
+                    this.name = this.$refs.name.value;
+                },
+                inpAge: function (){
+                    this.age = this.$refs.age.value;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
