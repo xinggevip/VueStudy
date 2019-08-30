@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue入门</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        #canvas {
+            width: 400px;
+            height: 200px;
+            background: red;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Vue事件，点击、双击、鼠标事件</h1>
+        <hr>
+        <button v-on:click="age++">加一岁</button>
+        <button v-on:click="age--">减一岁</button>
+        <input type="text" v-model="years" v-on:keyup.enter="addCustom">
+        <p>My ag is {{age}}</p>
+        <div id="canvas" v-on:mousemove="fn">
+            {{x}},{{y}} <span v-on:mousemove.stop="stop">stop moving阻止冒泡</span>
+        </div>
+        <h1>阻止默认事件</h1>
+        <a v-on:click.prevent="stopDefault" href="http://www.qiangssvip.com">高公子</a>
+        <h1>按键码</h1>
+        <form v-on:submit.revvent="">
+            
+            姓名：<input type="text" v-on:keypress="inpName"><br>
+            年龄：<input type="text" v-on:keypress="inpAge"><br>
+            备注：<input type="text" v-on:keypress="inpInfo" v-on:keypress.enter="inpEnter"><br>
+            <p>{{message}}</p>
+        </form>
+
+    </div>
+    <script>
+        let app = new Vue({
+            el: "#app",
+
+            data: {
+                age: 30,
+                years: 5,
+                x: 0,
+                y: 0,
+                message:""
+            },
+            methods: {
+                addCustom: function () {
+                    this.age = Number(this.age) + Number(this.years);
+                },
+                fn: function (event) {
+                    this.x = event.offsetX;
+                    this.y = event.offsetY;
+                },
+                stop: function (event) {
+                    event.stopPropagation();
+                },
+                stopDefault: function () {
+                    alert("阻止默认事件");
+                },
+                inpName: function (){
+                    this.message = "你正在输入姓名";
+                },
+                inpAge: function (){
+                    this.message = "你正在输入年龄";
+                },
+                inpInfo: function (){
+                    this.message = "你正在输入备注";
+                },
+                inpEnter: function (){
+                    this.message = "你输入了回车键";
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>
