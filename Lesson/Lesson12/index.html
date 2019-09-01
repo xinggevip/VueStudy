@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue入门</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>实例化多个Vue对象
+        </h1>
+        <hr>
+        <div id="app-one">
+            {{message}}
+        </div>
+        <div id="app-two">
+            {{message}}
+            <button v-on:click="changeData">改变app-one的数据</button>
+        </div>
+    </div>
+
+
+    <script>
+        let one = new Vue({
+            el: "#app-one",
+
+            data: {
+                message:"Hello app-one"
+            },
+            methods: {
+
+            },
+            computed: {
+                
+            }
+
+        });
+
+        let two = new Vue({
+            el: "#app-two",
+
+            data: {
+                message:"Hello app-two"
+            },
+            methods: {
+                changeData: function (){
+                    one.message = "修改ed"
+                }
+            },
+            computed: {
+                
+            }
+        })
+    </script>
+</body>
+
+</html>
