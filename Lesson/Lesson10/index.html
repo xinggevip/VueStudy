@@ -18,33 +18,33 @@
     <div id="app">
         <h1>v-for</h1>
         <hr>
-        <div id="app">
-            <ul>
-                <li v-for="item in items">{{item}}</li>
-            </ul>
-            <ul>
-                <li v-for="item in arrJson">{{item["name"]}}--{{item["age"]}}</li>
-            </ul>
-            <ul>
-                <li v-for="(item,index) in arrJson">{{index}}--{{item["name"]}}--{{item["age"]}}</li>
-            </ul>
-            <div v-for="(item,index) in arrJson">
-                <h3>{{index}}-{{item["name"]}}</h3>
-                <p>{{item["age"]}}</p>
-            </div>
-            <ul>
-                <li>template</li>
-                <template v-for="item in items">
-                    <li>{{item}}</li>
-                </template>
-            </ul>
-            <div>
-                <template v-for="(item,index) in arrJson">
-                        {{index}}<p v-for="(val,key,index) in item">{{index}}--{{key}}--{{val}}</p>
-                </template>
-                
-            </div>
+
+        <ul>
+            <li v-for="item in items">{{item}}</li>
+        </ul>
+        <ul>
+            <li v-for="item in arrJson">{{item["name"]}}--{{item["age"]}}</li>
+        </ul>
+        <ul>
+            <li v-for="(item,index) in arrJson">{{index}}--{{item["name"]}}--{{item["age"]}}</li>
+        </ul>
+        <div v-for="(item,index) in arrJson">
+            <h3>{{index}}-{{item["name"]}}</h3>
+            <p>{{item["age"]}}</p>
         </div>
+        <ul>
+            <li>template</li>
+            <template v-for="item in items">
+                <li>{{item}}</li>
+            </template>
+        </ul>
+        <div>
+            <template v-for="(item,index) in arrJson">
+                {{index}}<p v-for="(val,key,index) in item">{{index}}--{{key}}--{{val}}</p>
+            </template>
+
+        </div>
+
     </div>
     <script>
         let app = new Vue({
@@ -52,17 +52,17 @@
 
             data: {
                 items: ["Tom", "Jack", "lucy"],
-                arrJson:[
-                    {name:"Tom",age:18},
-                    {name:"Jack",age:28},
-                    {name:"Tony",age:38}
+                arrJson: [
+                    { name: "Tom", age: 18 },
+                    { name: "Jack", age: 28 },
+                    { name: "Tony", age: 38 }
                 ]
             },
             methods: {
 
             },
             computed: {
-                
+
             }
 
         })
