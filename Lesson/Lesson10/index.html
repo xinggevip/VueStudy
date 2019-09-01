@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue入门</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>v-for</h1>
+        <hr>
+        <div id="app">
+            <ul>
+                <li v-for="item in items">{{item}}</li>
+            </ul>
+            <ul>
+                <li v-for="item in arrJson">{{item["name"]}}--{{item["age"]}}</li>
+            </ul>
+            <ul>
+                <li v-for="(item,index) in arrJson">{{index}}--{{item["name"]}}--{{item["age"]}}</li>
+            </ul>
+            <div v-for="(item,index) in arrJson">
+                <h3>{{index}}-{{item["name"]}}</h3>
+                <p>{{item["age"]}}</p>
+            </div>
+            <ul>
+                <li>template</li>
+                <template v-for="item in items">
+                    <li>{{item}}</li>
+                </template>
+            </ul>
+            <div>
+                <template v-for="(item,index) in arrJson">
+                        {{index}}<p v-for="(val,key,index) in item">{{index}}--{{key}}--{{val}}</p>
+                </template>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        let app = new Vue({
+            el: "#app",
+
+            data: {
+                items: ["Tom", "Jack", "lucy"],
+                arrJson:[
+                    {name:"Tom",age:18},
+                    {name:"Jack",age:28},
+                    {name:"Tony",age:38}
+                ]
+            },
+            methods: {
+
+            },
+            computed: {
+                
+            }
+
+        })
+    </script>
+</body>
+
+</html>
