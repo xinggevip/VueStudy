@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue入门</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>组件的应用</h1>
+        <hr>
+        <div id="app-one">
+            <greet></greet>
+        </div>
+        <div id="app-two">
+            <greet></greet>
+        </div>
+    </div>
+
+
+    <script>
+        // 局部注册组件
+        let greet = {
+            template: `<p>
+                            {{name}}大家好，给大家介绍下我的女朋友@Vue
+                            <button v-on:click="changeName">改名</button>
+                        </P>`,
+            data: function () {
+                return {
+                    name: "Gaoxing:"
+                }
+            },
+            methods: {
+                changeName: function () {
+                    this.name = "Winner"
+                }
+            }
+        };
+        let one = new Vue({
+            el: "#app-one",
+            components:{
+                'greet':greet
+            }
+        });
+
+        let two = new Vue({
+            el: "#app-two",
+            components:{
+                'greet':greet
+            }
+        })
+    </script>
+</body>
+
+</html>

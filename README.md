@@ -129,3 +129,5 @@ Vue.config.keyCodes.f1 = 112
 
 获取表单控件的值
 
+## [组件注册](https://cn.vuejs.org/v2/guide/components-registration.html)
+
